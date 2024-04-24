@@ -1,0 +1,113 @@
+{
+    "regions": [
+      {
+        "name": "Centro Historico (Historic Center)",
+        "sitters": [
+          {
+            "name": "Sitter 1",
+            "description": "Experienced pet sitter available in Centro Historico. Loves dogs and cats of all sizes!"
+          }
+        ]
+      },
+      {
+        "name": "Chuburna de Hidalgo",
+        "sitters": [
+          {
+            "name": "Sitter 2",
+            "description": "Certified pet caregiver specializing in small dog breeds. Available in Chuburna de Hidalgo."
+          }
+        ]
+      },
+      {
+        "name": "Colonia Altabrisa",
+        "sitters": [
+          {
+            "name": "Sitter 3",
+            "description": "Animal lover offering pet sitting services in Colonia Altabrisa. Flexible hours."
+          }
+        ]
+      },
+      {
+        "name": "Colonia Buenavista",
+        "sitters": [
+          {
+            "name": "Sitter 4",
+            "description": "Responsible and caring pet sitter available in Colonia Buenavista. References available."
+          }
+        ]
+      },
+      {
+        "name": "Colonia Mexico",
+        "sitters": [
+          {
+            "name": "Sitter 5",
+            "description": "Friendly and trustworthy pet sitter with experience in Colonia Mexico. Loves outdoor activities with pets."
+          }
+        ]
+      },
+      {
+        "name": "Colonia Santa Rita",
+        "sitters": [
+          {
+            "name": "Sitter 6",
+            "description": "Dedicated pet caregiver offering personalized services in Colonia Santa Rita. Flexible scheduling."
+          }
+        ]
+      },
+      {
+        "name": "Francisco de Montejo",
+        "sitters": [
+          {
+            "name": "Sitter 7",
+            "description": "Passionate about pets and providing top-notch care in Francisco de Montejo. Available for house sitting too."
+          }
+        ]
+      },
+      {
+        "name": "Garcia Gineres",
+        "sitters": [
+          {
+            "name": "Sitter 8",
+            "description": "Experienced pet sitter specializing in cats. Garcia Gineres area preferred but flexible."
+          }
+        ]
+      },
+      {
+        "name": "La Ermita",
+        "sitters": [
+          {
+            "name": "Sitter 9",
+            "description": "Reliable and compassionate pet sitter available in La Ermita. Can handle special needs pets."
+          }
+        ]
+      },
+      {
+        "name": "Paseo Montejo",
+        "sitters": [
+          {
+            "name": "Sitter 10",
+            "description": "Professional pet sitter with a background in veterinary care. Paseo Montejo area preferred."
+          }
+        ]
+      },
+      {
+        "name": "San Antonio Cinta",
+        "sitters": [
+          {
+            "name": "Sitter 11",
+            "description": "Dedicated dog walker and pet sitter available in San Antonio Cinta. Experienced with all breeds."
+          }
+        ]
+      },
+      {
+        "name": "Santa Ana",
+        "sitters": [
+          {
+            "name": "Sitter 12",
+            "description": "Passionate animal lover providing pet sitting services in Santa Ana. Flexible rates."
+          }
+        ]
+      }
+    ]
+  }
+  
