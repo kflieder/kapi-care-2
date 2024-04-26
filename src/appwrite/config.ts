@@ -17,7 +17,6 @@ const appwriteClient = new Client();
 appwriteClient
     .setEndpoint(config.appwriteUrl)
     .setProject(config.appwriteProjectId)
-    // .setKey(config.appwriteEmplyeeAPIKey)
 
 export const account = new Account(appwriteClient);
 export const database = new Databases(appwriteClient);
@@ -111,23 +110,54 @@ export class AppwriteService {
             console.log("applicationsDatabase error" + error)
         }
     }
-    // async getApplications() {
-    //     try {
-    //         return await database.listDocuments(
-    //             config.appwriteDatabaseId,
-    //             config.appwriteCollectionId
-    //         );
-    //     } catch (error) {
-    //         console.log("getApplications error" + error)
-    //     }
-    // }
-        async getApplications() {
-        const response = await database.listDocuments(
-            config.appwriteDatabaseId,
-            config.appwriteCollectionId
-        );
-        return response.documents;
+    async getApplications() {
+        try {
+            const apps =  await database.listDocuments(
+                config.appwriteDatabaseId,
+                config.appwriteCollectionId
+            );
+            return apps.documents;
+        } catch (error) {
+            console.log("getApplications error" + error)
         }
+    }
+        // async getApplications() {
+        // const response = await database.listDocuments(
+        //     config.appwriteDatabaseId,
+        //     config.appwriteCollectionId
+        // );
+        // return response.documents;
+        // }
+    async createMessage({message}: {message: string}) {
+        try {
+            let payload = {
+                body: message,
+                user_id: (await account.get()).$id,
+                name: (await account.get()).name,
+            }
+            const newMessage = await database.createDocument(
+                config.appwriteDatabaseId,
+                config.appwriteMessagesCollectionId,
+                ID.unique(),
+                payload,
+            );
+            return newMessage;
+        } catch (error) {
+            console.log("createMessage error" + error)
+        }
+    
+    }
+    async getMessages() {
+        try {
+            const messages = await database.listDocuments(
+                config.appwriteDatabaseId,
+                config.appwriteMessagesCollectionId
+            );
+            return messages.documents;
+        } catch (error) {
+            console.log("getMessages error" + error)
+        }
+    }
 }
 
 const appwriteService = new AppwriteService();

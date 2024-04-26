@@ -45,7 +45,7 @@ export default function adminProfilePage() {
         ) : (
           applications.length > 0 ? (
             applications.map((app: any) => (
-              <div className="border border-black my-2" key={app.$id}>
+              <div className="border border-black m-2" key={app.$id}>
                 <p className="border p-2">Name: {app.name}</p>
                 <p className="border p-2">Email: {app.email}</p>
                 <p className="border p-2">Phone: {app.phone}</p>

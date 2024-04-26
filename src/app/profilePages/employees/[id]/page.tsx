@@ -2,6 +2,7 @@
 import Earnings from '@/app/myComponents/EmployeeComponents/Earnings'
 import SideBarOptions from '@/app/myComponents/EmployeeComponents/SideBarOptions'
 import UpcomingBookings from '@/app/myComponents/EmployeeComponents/UpcomingBookings'
+import Messages from '@/app/myComponents/Messages';
 import Header from '@/app/sections/header'
 import React, { useState } from 'react'
 
@@ -14,7 +15,7 @@ export default function employeeProfilePage() {
   const renderedComponent = () => {
     switch (selected) {
       case 'Messages':
-        return <div className="col-span-2 flex flex-col justify-center items-center">Messages</div>
+        return <Messages />
       case 'Edit Availability':
         return <div className="col-span-2 flex flex-col justify-center items-center">Edit Availability</div>
       case 'Edit Pets':
@@ -24,7 +25,7 @@ export default function employeeProfilePage() {
       case 'Sitting History':
         return <div className="col-span-2 flex flex-col justify-center items-center">Sitting History</div>
       default:
-        return <div className="col-span-2 flex flex-col justify-center items-center">
+        return <div className="flex flex-col justify-center items-center">
           <UpcomingBookings />
           <Earnings />
         </div>
@@ -41,7 +42,10 @@ export default function employeeProfilePage() {
         <div className="col-span-1">
           <SideBarOptions onSelect={handleSelect} />
         </div>
+        <div className="col-span-2">
         {renderedComponent()}
+        </div>
+        
       </div>
     </div>
   )
