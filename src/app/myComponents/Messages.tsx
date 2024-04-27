@@ -20,16 +20,19 @@ const messageBodySchema = z.object({
     message: z.string().min(1).max(1000)
 })
 
+type MessageType = { message: string}
+
 export default function Messages() {
-    const [messages, setMessages] = react.useState([])
+    const [messages, setMessages] = react.useState<MessageType[]>([]);
     const form = useForm<z.infer<typeof messageBodySchema>>({
         resolver: zodResolver(messageBodySchema),
     })
 
-    function onSubmit(values: z.infer<typeof messageBodySchema>) {
-        appwriteService.createMessage(values)
+    async function onSubmit(values: z.infer<typeof messageBodySchema>) {
+        const createdMessage: any = await appwriteService.createMessage(values)
         form.reset()
         form.setValue("message", "");
+        setMessages([...messages, createdMessage])
     }
 
     react.useEffect(() => {

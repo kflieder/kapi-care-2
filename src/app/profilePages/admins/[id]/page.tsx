@@ -33,8 +33,6 @@ export default function adminProfilePage() {
   
  
   
-  console.log("Applications state:", applications); // Log applications state
-  
   return (
     <div>
       <Header />
