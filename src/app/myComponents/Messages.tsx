@@ -32,7 +32,7 @@ export default function Messages() {
         const createdMessage: any = await appwriteService.createMessage(values)
         form.reset()
         form.setValue("message", "");
-        setMessages([...messages, createdMessage])
+        setMessages(prevMessages => [...prevMessages, createdMessage])
     }
 
     react.useEffect(() => {
@@ -40,8 +40,11 @@ export default function Messages() {
             setMessages(messages)
             console.log("Fetched data:", messages)
         })
+        appwriteService.realTimeMessages();
+        
 
     }, [])
+    
     
 
 
@@ -53,7 +56,10 @@ export default function Messages() {
                 {messages.map((message: any) => (
                     <div key={message.$id}>
                         <p className="border rounded inline-block p-1 my-2">{message.name}:</p>
-                        <p className="ml-10 border rounded p-2 w-2/3">{message.body}</p>
+                        <div  className="flex flex-col ml-10 border rounded p-2 w-2/3">
+                        <p className="text-xl">{message.body}</p>
+                        <span className="text-xs">{new Date(message.$createdAt).toLocaleString()}</span>
+                        </div>
                     </div>
                 ))}
             </div>

@@ -158,6 +158,15 @@ export class AppwriteService {
             console.log("getMessages error" + error)
         }
     }
+
+    async realTimeMessages() {
+        appwriteClient.subscribe(
+            `databases.${config.appwriteDatabaseId}.collections.${config.appwriteMessagesCollectionId}.documents`,
+            response => {
+                console.log("Real-time message", response);
+            },  
+        );
+    }
 }
 
 const appwriteService = new AppwriteService();
