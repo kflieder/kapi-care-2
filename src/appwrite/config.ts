@@ -164,6 +164,7 @@ export class AppwriteService {
             `databases.${config.appwriteDatabaseId}.collections.${config.appwriteMessagesCollectionId}.documents`,
             response => {
                 console.log("Real-time message", response);
+                
             },  
         );
     }

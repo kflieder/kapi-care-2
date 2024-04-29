@@ -1,4 +1,6 @@
 "use client";
+import SideBarOptions from '@/app/myComponents/EmployeeComponents/SideBarOptions';
+import Messages from '@/app/myComponents/Messages';
 import Header from '@/app/sections/header';
 import appwriteService from '@/appwrite/config';
 import React, { useEffect } from 'react'
@@ -36,6 +38,7 @@ export default function adminProfilePage() {
   return (
     <div>
       <Header />
+      <Messages />
     <div className="flex justify-center items-center h-screen">
       {
         isLoading ? (

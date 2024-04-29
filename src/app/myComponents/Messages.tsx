@@ -36,11 +36,12 @@ export default function Messages() {
     }
 
     react.useEffect(() => {
+        appwriteService.realTimeMessages();
         appwriteService.getMessages().then((messages: any) => {
             setMessages(messages)
             console.log("Fetched data:", messages)
         })
-        appwriteService.realTimeMessages();
+        
         
 
     }, [])
