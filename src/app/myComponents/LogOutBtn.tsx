@@ -27,6 +27,6 @@ export default function LogOutBtn() {
         }
     }
   return (
-    <div className='cursor-pointer' onClick={handleLogOut}>LogOutBtn</div>
+    <div className='cursor-pointer' onClick={handleLogOut}>Log Out</div>
   )
 }
